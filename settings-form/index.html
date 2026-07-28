@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="settings-page">
+      <header class="settings-header">
+        <h1>Settings</h1>
+        <p>Manage your account preferences and notifications.</p>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <section class="settings-section" aria-labelledby="profile-heading">
+          <h2 id="profile-heading">Profile</h2>
+
+          <div class="form-field">
+            <label for="display-name">Display name</label>
+            <input
+              type="text"
+              id="display-name"
+              name="displayName"
+              autocomplete="name"
+              placeholder="Your name"
+              required
+            />
+            <p class="field-error" data-error-for="displayName"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+              required
+            />
+            <p class="field-error" data-error-for="email"></p>
+          </div>
+
+          <div class="form-field">
+            <label for="timezone">Timezone</label>
+            <select id="timezone" name="timezone">
+              <option value="UTC">UTC</option>
+              <option value="America/New_York">Eastern Time (US)</option>
+              <option value="America/Chicago">Central Time (US)</option>
+              <option value="America/Denver">Mountain Time (US)</option>
+              <option value="America/Los_Angeles">Pacific Time (US)</option>
+              <option value="Asia/Kolkata">India Standard Time</option>
+              <option value="Europe/London">London</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="notifications-heading">
+          <h2 id="notifications-heading">Notifications</h2>
+
+          <fieldset class="toggle-group">
+            <legend class="sr-only">Notification preferences</legend>
+
+            <label class="toggle-row">
+              <span>
+                <span class="toggle-label">Email notifications</span>
+                <span class="toggle-description">Receive updates about your account by email.</span>
+              </span>
+              <input type="checkbox" name="emailNotifications" />
+            </label>
+
+            <label class="toggle-row">
+              <span>
+                <span class="toggle-label">Product updates</span>
+                <span class="toggle-description">Get news about new features and improvements.</span>
+              </span>
+              <input type="checkbox" name="productUpdates" />
+            </label>
+
+            <label class="toggle-row">
+              <span>
+                <span class="toggle-label">Weekly digest</span>
+                <span class="toggle-description">A summary of activity sent every Monday.</span>
+              </span>
+              <input type="checkbox" name="weeklyDigest" />
+            </label>
+          </fieldset>
+        </section>
+
+        <section class="settings-section" aria-labelledby="appearance-heading">
+          <h2 id="appearance-heading">Appearance</h2>
+
+          <fieldset class="radio-group">
+            <legend>Theme</legend>
+
+            <label class="radio-row">
+              <input type="radio" name="theme" value="light" checked />
+              <span>Light</span>
+            </label>
+
+            <label class="radio-row">
+              <input type="radio" name="theme" value="dark" />
+              <span>Dark</span>
+            </label>
+
+            <label class="radio-row">
+              <input type="radio" name="theme" value="system" />
+              <span>System</span>
+            </label>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="language">Language</label>
+            <select id="language" name="language">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+              <option value="de">German</option>
+              <option value="hi">Hindi</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="settings-section" aria-labelledby="privacy-heading">
+          <h2 id="privacy-heading">Privacy</h2>
+
+          <label class="toggle-row">
+            <span>
+              <span class="toggle-label">Public profile</span>
+              <span class="toggle-description">Allow others to view your profile page.</span>
+            </span>
+            <input type="checkbox" name="publicProfile" />
+          </label>
+
+          <label class="toggle-row">
+            <span>
+              <span class="toggle-label">Show activity status</span>
+              <span class="toggle-description">Let teammates see when you are online.</span>
+            </span>
+            <input type="checkbox" name="showActivity" />
+          </label>
+        </section>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="reset-btn">Reset</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
